@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1614007820 source:c:\users\asus\desktop\sudoku\main.c
+	<stdio.h>
+	<stdlib.h>
+	"sudoku.h"
+	<stdbool.h>
+
+1614007932 c:\users\asus\desktop\sudoku\sudoku.h
+
+1614007932 source:c:\users\asus\desktop\sudoku\sudoku.h
+
