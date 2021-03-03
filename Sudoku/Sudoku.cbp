@@ -31,13 +31,21 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="affichage.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="affichage.h" />
+		<Unit filename="commande.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="commande.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="sudoku.h">
-			<Option compile="1" />
-			<Option link="1" />
+		<Unit filename="sudoku.c">
+			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="sudoku.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

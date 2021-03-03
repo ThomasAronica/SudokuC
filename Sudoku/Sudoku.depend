@@ -1,11 +1,83 @@
 # depslib dependency file v1.0
-1614007820 source:c:\users\asus\desktop\sudoku\main.c
+1614092616 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\main.c
 	<stdio.h>
 	<stdlib.h>
-	"sudoku.h"
 	<stdbool.h>
+	<windows.h>
+	"sudoku.h"
+	"commande.h"
 
-1614007932 c:\users\asus\desktop\sudoku\sudoku.h
+1614092654 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\sudoku.c
+	<stdlib.h>
+	<stdio.h>
+	<stdbool.h>
+	"sudoku.h"
+	"commande.h"
 
-1614007932 source:c:\users\asus\desktop\sudoku\sudoku.h
+1614092667 c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\sudoku.h
+
+1614089415 c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\consoleaffichage.h
+
+1614088740 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\consoleaffichage.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"consoleAffichage.h"
+
+1614087200 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\usersaisie.c
+	<stdlib.h>
+	<stdio.h>
+	"sudoku.h"
+	"consoleAffichage.h"
+
+1614086944 c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\usersaisie.h
+
+1614092631 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\commande.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	"commande.h"
+
+1614092607 c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\commande.h
+
+1614757788 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\commande.c
+	<stdlib.h>
+	<stdio.h>
+	<stdarg.h>
+	<stdbool.h>
+	<string.h>
+	"commande.h"
+
+1614356332 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\commande.h
+
+1614683171 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<windows.h>
+	"sudoku.h"
+	"commande.h"
+	"affichage.h"
+
+1614684540 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\sudoku.h
+
+1614684531 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\sudoku.c
+	<stdlib.h>
+	<stdio.h>
+	<stdbool.h>
+	"sudoku.h"
+	"commande.h"
+	"affichage.h"
+
+1614757830 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\affichage.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<stdarg.h>
+	"affichage.h"
+	"commande.h"
+
+1614757834 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\affichage.h
 

@@ -1,15 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "sudoku.h"
 #include <stdbool.h>
+#include <windows.h>
+
+#include "sudoku.h"
+#include "commande.h"
+#include "affichage.h"
 
 int main()
 {
-    grille sudoku = new_grille();
-    affichage(sudoku);
-    sudoku = init();
-
-
+    introduction();
 
     return 0;
 }

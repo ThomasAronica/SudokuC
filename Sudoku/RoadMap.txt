@@ -1,0 +1,18 @@
+Afficher écran d'introduction 
+Attendre 
+Afficher les règles du jeu 
+	Choix :	jouer 	-> 6
+			quitter	-> exit()
+Afficher liste des parties 
+	Choix :	Reprendre une partie 												->9
+			Nouvelle partie (Créer une grille de sudoku ? Prendre une vierge ?)
+Demander le nom de la partie
+Lancer la partie 
+	Afficher la grille 
+	Afficher la liste des commandes 
+Rafraichir quand le joueur saisie une nouvelles valeurs 
+Si sortie
+	Demander si sauvegarder 
+		Oui : Demander le nom 
+	Retour -> 6
+Générer la grille aléatoire 	-> 10

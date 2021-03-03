@@ -1,24 +1,34 @@
 #ifndef SUDOKU_H_INCLUDED
 #define SUDOKU_H_INCLUDED
 
-    typedef struct grille{
-        int tableau[8][8];
-    }grille;
+// _Bool: macro prÃ©dfini
+    typedef struct{
+        int value;
+        _Bool modifiable;
+    }Case;
 
-//Procédure de créations
-grille new_grille();
-grille init();
+    typedef struct{
+        Case* grille[9][9];
+        _Bool finished;
+    }Sudoku;
 
-//Procédure de vérifications : retourn 0 si bon
-int verif_ligne(const grille G,const int l);
-int verif_colonne(const grille G,const int c);
-int verif_case(const grille G,const int k);
-int verif(const grille G);
 
-//procédure d'affichage
-void affichage(const grille G);
+//Constructor
+Case* newCase(void);
+Sudoku* newSudoku(void);
 
-//procédure de sauvegarde/chargement
-grille charge();
-grille save();
+//Setters Getters
+    //Case
+int getValue(const Case* c);
+void setValue(Case *c, const int value);
+    //Sudoku
+void setCase(Sudoku* SUDOKU, const int posX, const int posY, Case* c);
+Case* getCase(Sudoku* SUDOKU, const int posX, const int posY);
+
+//Methode
+void init(Sudoku* SUDOKU, Case* c);
+void afficher(const Sudoku* SUDOKU);
+Sudoku* getSudokuFromFile(const char* chemain);
+
+
 #endif // SUDOKU_H_INCLUDED
