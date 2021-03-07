@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <stdarg.h> //permet de passer une liste d'arguments
-#include <stdbool.h>
+#include <stdarg.h>     //permet de passer une liste d'arguments
+#include <stdbool.h>    //permet d'utiliser les booléen
 #include <string.h>
 
 #include "commande.h"
@@ -29,17 +29,20 @@ char* saisie(const int nbrVar, ...){
     }
 
     //Liste des commandes admises
+    ligne();
     printf(" Liste des commandes admises : \n");
     for(int i=0; i<nbrVar;i++){
         printf(" - %s\n",tabCommande[i]);
     }
+    printf("\n");
+    ligne();
 
     //Tant que l'utilisateurs n'a pas passé une de ces commandes ont boucles
     bool isIn = false;
     char *retour = malloc(sizeof(char) * size);
 
     while(!isIn){
-        printf(" #:");
+        printf("\n #:");
         scanf("%s",retour);
 
         //on regarde si la saisie est dans la liste : ne marche pas
@@ -63,9 +66,13 @@ int getChoix(const char* strAcmp, const int nbrVar,...){
     va_start(argList, nbrVar);
 
     for(int i=0;i<nbrVar;i++){
-        if(strcmp(strAcmp,(char*)va_arg(argList,char*)) == 0)
+        if(strcmp(strAcmp,(char*)va_arg(argList,char*)) == 0){
+            va_end(argList);
             return i;
+        }
+
     }
+    va_end(argList);
     return -1;
 }
 

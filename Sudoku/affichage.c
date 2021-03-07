@@ -10,6 +10,16 @@
 #define COLONNE 47
 #define LIGNE 75
 
+int os(void){
+    #ifdef WIN32 OR WIN64
+    #define I 0
+    #elif
+    #define I 1
+    #endif // WIN32
+
+    return I;
+}
+
 void consoleParam(void){
     system("title SUDOKU");
     system("mode con lines=75 cols=47");
@@ -47,6 +57,12 @@ void ligne(void){
     for(int i=0;i<COLONNE;i++){
         printf("=");
     }
+    printf("\n");
+}
+
+void ligne_c(const char c){
+    for(int i=0; i<COLONNE; i++)
+        printf("%c",c);
     printf("\n");
 }
 
@@ -93,13 +109,11 @@ void rules(void){
 void play(void){
     system("cls");
     titre(" Sudoku ");
-    printf(" Pour charger une partie sauvegarder : charge\n Pour lancer une nouvelle partie : new\n Pour quitter : quit");
 
     switch(getChoix(saisie(3, "charge", "new", "quit"), 3, "charge", "new", "quit")){
     case -1:
         break;
     case 0:
-        affichage_chargeGrille();
         break;
     case 1 :
         //new_grille();
@@ -116,9 +130,8 @@ void quit(void){
     system("exit");
 }
 
-void affichage_chargeGrille(void){
-    system("cls");
-    titre(" Sudoku ");
-    listeGrille();
-
+/** Fonction qui affiche toutes les commandes et ce qu'elle font
+ *
+ */
+void man(void){
 }
