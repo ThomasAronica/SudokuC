@@ -7,15 +7,22 @@
 #include "testFunction.h"
 
 void test_afficher(void){
-    Sudoku* sud = newSudoku();
-    Case* c = newCase();
-    c->value = 2 ;
-    printf("Grille modifiable \n");
-    c->modifiable = true;
-    init(sud,c);
-    afficher(sud);
-    printf("Grille non modifiable \n");
-    c->modifiable = false;
-    init(sud,c);
-    afficher(sud);
+    Sudoku* sudoku = new_Sudoku();
+    Sudoku_posInit(sudoku);
+
+    afficher(sudoku);
+
+    Sudoku_end(sudoku);
+
+}
+
+void test_getPosFromCase3_3(void){
+    int tab[9];
+    for(int i=0;i<9;i++){
+        getPosFromCase3_3(i, tab);
+        for(int j=0;j<9;j++){
+            printf("%d ",tab[j]);
+        }
+        printf("\n");
+    }
 }

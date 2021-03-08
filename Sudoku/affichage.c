@@ -10,16 +10,6 @@
 #define COLONNE 47
 #define LIGNE 75
 
-int os(void){
-    #ifdef WIN32 OR WIN64
-    #define I 0
-    #elif
-    #define I 1
-    #endif // WIN32
-
-    return I;
-}
-
 void consoleParam(void){
     system("title SUDOKU");
     system("mode con lines=75 cols=47");

@@ -5,6 +5,7 @@
 #include <string.h>
 
 #include "commande.h"
+#include "affichage.h"
 
 /** Inspirez de l'exemple : https://koor.fr/C/cstdarg/va_list.wp
  *
@@ -16,8 +17,7 @@ char* saisie(const int nbrVar, ...){
 
     //Initialisation du tableau :
     for(int i=0; i<nbrVar;i++){
-        char* c = (char* )va_arg(argList,char*);
-        tabCommande[i] = c;
+        tabCommande[i] = (char* )va_arg(argList,char*);
     }
     va_end(argList);
 
@@ -77,4 +77,6 @@ int getChoix(const char* strAcmp, const int nbrVar,...){
 }
 
 
-
+int compare(const void* a, const void*b){
+    return (*(int*)a- *(int*)b);
+}

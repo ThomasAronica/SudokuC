@@ -11,14 +11,12 @@
 
 int main()
 {
-    int o_s = os();
-    printf("%d\n",o_s);
-
 
     //permet de set le titre de la console
     SetConsoleTitle("SUDOKU");
-    test_afficher();
-    //introduction();
+    introduction();
+
+
 
     return 0;
 }

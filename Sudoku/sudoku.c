@@ -3,12 +3,11 @@
 #include <stdbool.h>
 #include <windows.h>
 
-#include "sudoku.h"
 #include "commande.h"
-#include "affichage.h"
 #include "color.h"
+#include "sudoku.h"
 
-Case* newCase(void){
+Case* new_Case(void){
     Case* c = malloc(sizeof(*c));
     if(c == NULL)
         exit(EXIT_FAILURE);
@@ -18,57 +17,67 @@ Case* newCase(void){
     return c;
 }
 
-Sudoku* newSudoku(void){
+Sudoku* new_Sudoku(void){
     Sudoku* SUDOKU = malloc(sizeof(*SUDOKU));
     if(SUDOKU == NULL)
         exit(EXIT_FAILURE);
     SUDOKU->finished = false;
 
+    for(int i=0; i<9; i++){
+        for(int j=0;j<9;j++){
+            SUDOKU->grille[i][j] = new_Case();
+        }
+    }
+
     return SUDOKU;
 }
 
-int getValue(const Case* c){
+int Case_getValue(const Case* c){
     return c->value;
 }
 
-void setValue(Case *c, const int value){
-    if(c->modifiable)
-        c->value = value;
-
+bool Case_getModifiable(const Case* c){
+    return c->modifiable;
 }
 
-void setCase(Sudoku* SUDOKU, const int posX, const int posY, Case* c){
+void Case_setModifiable(Case* c, const bool modifiable){
+    c->modifiable = modifiable;
+}
+
+void Case_setValue(Case *c, const int value){
+    c->value = value;
+}
+
+void Case_setCase(Case* c, const int value, const bool modifiable){
+    Case_setValue(c, value);
+    Case_setModifiable(c, modifiable);
+}
+
+void Sudoku_setCase(Sudoku* SUDOKU, const int posX, const int posY, Case* c){
     SUDOKU->grille[posX][posY] = c;
 }
 
-Case* getCase(Sudoku* SUDOKU, const int posX, const int posY){
+Case* Sudoku_getCase(Sudoku* SUDOKU, const int posX, const int posY){
     return SUDOKU->grille[posX][posY];
 }
 
-/** Initialise une grille de pointeur de sudoku avec une seul case c, pour test
- *
- * Sudoku*
- * Case*
- * void
- *
- */
-void init(Sudoku* SUDOKU, Case* c){
-
-    for(int i=0; i<9; i++){
+void Sudoku_posInit(Sudoku* SUDOKU){
+    for(int i=0;i<9;i++){
         for(int j=0;j<9;j++){
-            SUDOKU->grille[i][j] = c;
+            Case_setValue(SUDOKU->grille[i][j],i*9+j);
         }
     }
 }
 
-/** Fonction d'affichage d'une grille de sudoku avec gestion des couleurs (defini dans color.h) inspirer de :
- *  - https://www.gladir.com/CODER/CWINDOWS/setconsoletextattribute.htm (pour les codes couleurs)
- *  - https://code-examples.net/fr/q/3ddb4d                             (pour l'utilisations de SetConsoleTextAttribute)
- *
- * const Sudoku* Sudoku
- * void
- *
- */
+void Sudoku_end(Sudoku* SUDOKU){
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            free(SUDOKU->grille[i][j]);
+        }
+    }
+    free(SUDOKU);
+}
+
 void afficher(const Sudoku* SUDOKU){
     //Gestion de la couleurs
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -116,4 +125,75 @@ void afficher(const Sudoku* SUDOKU){
     printf("+---+---+---+---+---+---+---+---+---+\n");
     SetConsoleTextAttribute(hConsole,BLANC);
 
+}
+
+bool solveur(const Sudoku* SUDOKU){
+    int tab[9];
+
+    //On verifie les lignes et les colonnes
+    for(int i=0;i<9;i++){
+        for(int j=0;j<9;j++){
+            tab[j] = SUDOKU->grille[i][j]->value;
+
+            if(!juste(tab))
+                return false;
+
+            tab[j] = SUDOKU->grille[j][i]->value;
+
+            if(!juste(tab))
+                return false;
+        }
+    }
+
+    //On mets toutes les cases dans un tableau de 81
+    int tab_81[81];
+    for(int i=0;i<9;i++){
+        for(int j=0;j<3;j++){
+            tab_81[i*9 + j] = SUDOKU->grille[i][j]->value;
+        }
+    }
+
+    //On extrait un tableau de 9 valeurs
+    int tab_temp[9];
+    for(int i=0;i<9;i++){
+        getPosFromCase3_3(i,tab_temp);
+        for(int j=0;j<9;j++){
+            tab[j] = tab_81[tab_temp[j]];
+        }
+        if(!juste(tab))
+            return false;
+
+    }
+
+    return true;
+}
+
+bool juste(int tableau[9]){
+    //on tri le tableau
+    qsort(tableau,9,sizeof(int),compare);
+    const int tab[9] = {1,2,3,4,5,6,7,8,9};
+
+    //Si les tableaux ne sont pas identique alors il y a une erreur
+    for(int i=0;i<9;i++){
+        if(tableau[i] != tab[i])
+            return false;
+    }
+    return true;
+}
+
+int tabIndex(const int tableau[9], const int search_int){
+    for(int i=0;i<9;i++){
+        if(tableau[i] == search_int)
+            return i;
+    }
+    return -1;
+}
+
+void getPosFromCase3_3(const int num_case,int tab_retour[9]){
+
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            tab_retour[i*3+j] = 9*(((int)num_case/3)*3+i)+j+((num_case%3)*3);
+        }
+    }
 }

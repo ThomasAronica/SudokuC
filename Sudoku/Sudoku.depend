@@ -41,36 +41,40 @@
 
 1614092607 c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\commande.h
 
-1614757788 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\commande.c
+1615123928 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\commande.c
 	<stdlib.h>
 	<stdio.h>
 	<stdarg.h>
 	<stdbool.h>
 	<string.h>
 	"commande.h"
+	"affichage.h"
 
-1614356332 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\commande.h
+1615123949 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\commande.h
 
-1614683171 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\main.c
+1615216186 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\main.c
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
 	<windows.h>
+	<tchar.h>
 	"sudoku.h"
 	"commande.h"
 	"affichage.h"
+	"testFunction.h"
 
-1614684540 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\sudoku.h
+1615216679 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\sudoku.h
 
-1614684531 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\sudoku.c
+1615216588 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\sudoku.c
 	<stdlib.h>
 	<stdio.h>
 	<stdbool.h>
-	"sudoku.h"
+	<windows.h>
 	"commande.h"
-	"affichage.h"
+	"color.h"
+	"sudoku.h"
 
-1614757830 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\affichage.c
+1615122475 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\affichage.c
 	<stdlib.h>
 	<stdio.h>
 	<string.h>
@@ -79,5 +83,17 @@
 	"affichage.h"
 	"commande.h"
 
-1614757834 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\affichage.h
+1615122531 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\affichage.h
+
+1614884696 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\color.h
+
+1615216224 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\testfunction.c
+	<stdbool.h>
+	<stdio.h>
+	<stdlib.h>
+	"affichage.h"
+	"sudoku.h"
+	"testFunction.h"
+
+1615213452 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\testfunction.h
 

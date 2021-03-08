@@ -35,6 +35,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="affichage.h" />
+		<Unit filename="color.h" />
 		<Unit filename="commande.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -46,6 +47,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="sudoku.h" />
+		<Unit filename="testFunction.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="testFunction.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

@@ -1,7 +1,6 @@
 #ifndef SUDOKU_H_INCLUDED
 #define SUDOKU_H_INCLUDED
 
-// _Bool: macro prédfini
     typedef struct{
         int value;
         _Bool modifiable;
@@ -12,23 +11,54 @@
         _Bool finished;
     }Sudoku;
 
+    ///Constructeur
+Case* new_Case(void);
+Sudoku* new_Sudoku(void);
 
-//Constructor
-Case* newCase(void);
-Sudoku* newSudoku(void);
+    ///Getters & Setters Case
+int Case_getValue(const Case* c);
+bool Case_getModifiable(const Case* c);
+void Case_setModifiable(Case* c, const bool modifiable);
+void Case_setValue(Case *c, const int value);
+void Case_setCase(Case* c, const int value, const bool modifiable);
 
-//Setters Getters
-    //Case
-int getValue(const Case* c);
-void setValue(Case *c, const int value);
-    //Sudoku
-void setCase(Sudoku* SUDOKU, const int posX, const int posY, Case* c);
-Case* getCase(Sudoku* SUDOKU, const int posX, const int posY);
+    ///Getters & Setters Sudoku
+void Sudoku_setCase(Sudoku* SUDOKU, const int posX, const int posY, Case* c);
+Case* Sudoku_getCase(Sudoku* SUDOKU, const int posX, const int posY);
 
-//Methode
-void init(Sudoku* SUDOKU, Case* c);
+/** \brief : Fonction qui initialise une grille de sudoku avec des valeurs allant de 0 a 80
+ *
+ * \param : Sudoku* SUDOKU
+ * \return : void
+ *
+ */
+void Sudoku_posInit(Sudoku* SUDOKU);
+
+    ///Destructeurs Sudoku
+
+/** \brief : Fonction qui libère la mémoire d'un sudoku, case par case, puis le sudoku
+ *
+ * \param : Sudoku* SUDOKU
+ * \return : void
+ *
+ */
+void Sudoku_end(Sudoku* SUDOKU);
+
+    ///Methodes génériques
+
+/** \brief : Fonction d'affichage d'une grille de sudoku avec gestion des couleurs (defini dans color.h) inspirer de :
+ *              - https://www.gladir.com/CODER/CWINDOWS/setconsoletextattribute.htm (pour les codes couleurs)
+ *              - https://code-examples.net/fr/q/3ddb4d                             (pour l'utilisations de SetConsoleTextAttribute)
+ *
+ * \param : const Sudoku* Sudoku
+ * \return : void
+ *
+ */
 void afficher(const Sudoku* SUDOKU);
-Sudoku* getSudokuFromFile(const char* chemain);
+bool solveur(const Sudoku* SUDOKU);
+bool juste(int tableau[9]);
+int tabIndex(const int tableau[9], const int search_int);
+void getPosFromCase3_3(const int num_case,int tab_retour[9]);
 
 
 #endif // SUDOKU_H_INCLUDED
