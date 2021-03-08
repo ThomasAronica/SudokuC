@@ -1,0 +1,117 @@
+# depslib dependency file v1.0
+1614092616 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<windows.h>
+	"sudoku.h"
+	"commande.h"
+
+1614092654 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\sudoku.c
+	<stdlib.h>
+	<stdio.h>
+	<stdbool.h>
+	"sudoku.h"
+	"commande.h"
+
+1614092667 c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\sudoku.h
+
+1614089415 c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\consoleaffichage.h
+
+1614088740 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\consoleaffichage.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	"consoleAffichage.h"
+
+1614087200 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\usersaisie.c
+	<stdlib.h>
+	<stdio.h>
+	"sudoku.h"
+	"consoleAffichage.h"
+
+1614086944 c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\usersaisie.h
+
+1614092631 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\commande.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	"commande.h"
+
+1614092607 c:\users\asus\documents\ecole\bashlor\cours\c avancé\test\sudoku\commande.h
+
+1615226801 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\commande.c
+	<stdlib.h>
+	<stdio.h>
+	<stdarg.h>
+	<stdbool.h>
+	<string.h>
+	"commande.h"
+	"affichage.h"
+
+1615226813 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\commande.h
+
+1615225625 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<windows.h>
+	<tchar.h>
+	"sudoku.h"
+	"commande.h"
+	"affichage.h"
+	"testFunction.h"
+	"interactionConsole.h"
+
+1615224825 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\sudoku.h
+
+1615224815 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\sudoku.c
+	<stdlib.h>
+	<stdio.h>
+	<stdbool.h>
+	<windows.h>
+	"commande.h"
+	"color.h"
+	"sudoku.h"
+	"interactionConsole.h"
+
+1615223583 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\affichage.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<stdarg.h>
+	"affichage.h"
+	"commande.h"
+
+1615224637 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\affichage.h
+
+1614884696 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\color.h
+
+1615224725 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\testfunction.c
+	<stdbool.h>
+	<stdio.h>
+	<stdlib.h>
+	"affichage.h"
+	"sudoku.h"
+	"testFunction.h"
+	"commande.h"
+	"color.h"
+	"interactionConsole.h"
+
+1615223774 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\testfunction.h
+
+1615226940 c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\interactionconsole.h
+
+1615225446 source:c:\users\asus\documents\ecole\bashlor\cours\c avancé\sudoku\interactionconsole.c
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<stdarg.h>
+	<stdbool.h>
+	"affichage.h"
+	"commande.h"
+	"interactionConsole.h"
+
