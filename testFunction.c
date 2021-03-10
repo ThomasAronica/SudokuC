@@ -45,3 +45,30 @@ void test_listeCommande(void){
     listeCommande_afficher(listeCmd);
     listeCommande_end(listeCmd);
 }
+
+void affichage() {
+    FILE* fichier = NULL;
+    int score[3] = { 0 }; // Tableau des 3 meilleurs scores
+    int grille[9][9];
+    int i;
+    char carac;
+
+    fichier = fopen("grilleFacile", "r");
+
+    if (fichier != NULL)
+    {
+        for (i = 1; i < 9; i++)
+        {
+            for (j = 1; j < 9; j++)
+            {
+                carac = fgetc(fichier);
+                grille[j][i]=carac
+            }
+        }
+        
+
+        fclose(fichier);
+    }
+
+    return 0;
+}
